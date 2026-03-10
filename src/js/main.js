@@ -5,20 +5,25 @@ document.addEventListener('DOMContentLoaded', () => {
     loadHeader();
     loadFooter();
 
-    // Add event listeners for interactive features
-    const contactButton = document.getElementById('contact-button');
-    if (contactButton) {
-        contactButton.addEventListener('click', () => {
-            alert('Contact form will be implemented soon!');
+    // Smooth scroll for same-page navigation
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+        link.addEventListener('click', event => {
+            const targetId = link.getAttribute('href').slice(1);
+            const target = document.getElementById(targetId);
+            if (target) {
+                event.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         });
-    }
+    });
 });
 
 // Function to load the header component
 function loadHeader() {
     import('./components/header.js').then(module => {
         const header = module.default();
-        document.body.insertAdjacentHTML('afterbegin', header);
+        const placeholder = document.getElementById('header');
+        if (placeholder) placeholder.innerHTML = header;
     });
 }
 
@@ -26,6 +31,7 @@ function loadHeader() {
 function loadFooter() {
     import('./components/footer.js').then(module => {
         const footer = module.default();
-        document.body.insertAdjacentHTML('beforeend', footer);
+        const placeholder = document.getElementById('footer');
+        if (placeholder) placeholder.innerHTML = footer;
     });
 }
