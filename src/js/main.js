@@ -5,21 +5,64 @@ document.addEventListener('DOMContentLoaded', () => {
     loadHeader();
     loadFooter();
 
-    // Smooth scroll for same-page navigation
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-        link.addEventListener('click', event => {
-            const targetId = link.getAttribute('href').slice(1);
-            const target = document.getElementById(targetId);
-            if (target) {
-                event.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-    });
+    // Page transitions and typed intro (if available)
+    setupPageTransitions();
+    setupTypedHeader();
 
     // Fade-in animations
     setupRevealOnScroll();
 });
+
+function setupPageTransitions() {
+    const root = document.documentElement;
+
+    // Remove fade overlay after the page is ready
+    requestAnimationFrame(() => {
+        root.classList.remove('page-transition');
+    });
+
+    // Animate links between pages (for internal HTML navigation)
+    document.body.addEventListener('click', event => {
+        const anchor = event.target.closest('a');
+        if (!anchor) return;
+        const href = anchor.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        if (href.startsWith('http') && !href.includes(window.location.host)) return;
+
+        const isInternal = href.endsWith('.html') || href === 'index.html';
+        if (!isInternal) return;
+
+        event.preventDefault();
+        root.classList.add('page-transition');
+        setTimeout(() => {
+            window.location.href = href;
+        }, 280);
+    });
+}
+
+function setupTypedHeader() {
+    const nameEl = document.querySelector('.hero-name[data-text]');
+    if (!nameEl) return;
+
+    const text = nameEl.dataset.text;
+    nameEl.textContent = '';
+
+    let index = 0;
+    const typingSpeed = 70;
+    const cursor = document.createElement('span');
+    cursor.className = 'hero-cursor';
+    cursor.textContent = '|';
+    nameEl.parentElement?.appendChild(cursor);
+
+    const interval = setInterval(() => {
+        nameEl.textContent += text.charAt(index);
+        index += 1;
+        if (index >= text.length) {
+            clearInterval(interval);
+            cursor.remove();
+        }
+    }, typingSpeed);
+}
 
 function setupRevealOnScroll() {
     const elements = document.querySelectorAll('.reveal');
