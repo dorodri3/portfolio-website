@@ -16,7 +16,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // Fade-in animations
+    setupRevealOnScroll();
 });
+
+function setupRevealOnScroll() {
+    const elements = document.querySelectorAll('.reveal');
+    if (!('IntersectionObserver' in window)) {
+        // Fallback: just reveal everything immediately
+        elements.forEach(el => el.classList.add('active'));
+        return;
+    }
+
+    const observer = new IntersectionObserver(
+        (entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    obs.unobserve(entry.target);
+                }
+            });
+        },
+        { threshold: 0.15 }
+    );
+
+    elements.forEach(el => observer.observe(el));
+}
 
 // Function to load the header component
 function loadHeader() {

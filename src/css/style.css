@@ -184,6 +184,40 @@ a:hover {
     box-shadow: 0 0 0 3px rgba(19, 102, 214, 0.22);
 }
 
+/* Reveal animations */
+.reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Card hover effects */
+.project-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.15);
+}
+
+.contact-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin: 16px 0 28px;
+    font-weight: 600;
+}
+
+.contact-info a {
+    color: #1f2937;
+}
+
 /* Footer */
 .site-footer {
     background: #111827;
@@ -219,14 +253,29 @@ a:hover {
     color: rgba(255, 255, 255, 1);
 }
 
-@media (max-width: 640px) {
+@media (max-width: 900px) {
     .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 16px;
+    }
+
+    .section {
+        padding: 48px 0;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer-content {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    .footer-content {
+    .contact-info {
         flex-direction: column;
-        align-items: flex-start;
     }
 }
