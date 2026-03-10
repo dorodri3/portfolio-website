@@ -6,9 +6,10 @@ const Footer = () => {
                 <p>&copy; ${year} Darrell Rodriguez. All rights reserved.</p>
                 <nav aria-label="Footer">
                     <ul class="nav-list">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
             </div>

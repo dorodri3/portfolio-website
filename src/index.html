@@ -11,14 +11,24 @@
 
     <main>
         <section class="hero section" aria-label="Welcome">
+            <div class="hero-background"></div>
             <div class="section-inner">
                 <div class="hero-content reveal">
-                    <h2 class="hero-title">Hi, I’m <span class="hero-name" data-text="Darrell Rodriguez"></span></h2>
-                    <p class="hero-tagline">I design human-centered experiences that make products feel natural and delightful.</p>
+                    <p class="hero-overline">UX Designer • Product Strategist</p>
+                    <h1 class="hero-title">
+                        <span class="hero-greeting">Hi, I’m</span>
+                        <span class="hero-name" data-text="Darrell Rodriguez"></span>
+                    </h1>
+                    <p class="hero-tagline">I shape digital experiences that feel effortless, accessible, and delightful.</p>
+
                     <div class="cta-grid">
-                        <a class="button" href="about.html">Learn more</a>
-                        <a class="button" href="projects.html">See projects</a>
-                        <a class="button" href="contact.html">Contact me</a>
+                        <a class="button button-primary" href="projects.html">View work</a>
+                        <a class="button button-secondary" href="contact.html">Let’s talk</a>
+                    </div>
+
+                    <div class="scroll-indicator">
+                        <span class="scroll-dot"></span>
+                        <span class="scroll-text">Scroll to explore</span>
                     </div>
                 </div>
             </div>
@@ -26,25 +36,111 @@
 
         <section class="section reveal">
             <div class="section-inner">
-                <h2>Quick Highlights</h2>
-                <p>Graduated from Arizona State University (Graphic Information Technology, UX focus) in May 2025. Currently pursuing a Master’s in Graphic Information Technology while building intuitive digital products.</p>
-                <div class="quick-highlights">
-                    <div class="highlight-card reveal">
-                        <h3>Design Systems</h3>
-                        <p>Creating scalable UI systems that empower teams and maintain consistency.</p>
+                <h2>How I work</h2>
+                <p>Combining research, design, and iteration to deliver experiences that feel intuitive and delightful.</p>
+                <div class="process-grid">
+                    <div class="process-card reveal">
+                        <span class="process-step">01</span>
+                        <h3>Discover</h3>
+                        <p>Listen, research, and define the true users' needs before sketching a single screen.</p>
                     </div>
-                    <div class="highlight-card reveal">
-                        <h3>Research-led</h3>
-                        <p>Using user research and usability testing to make data-driven decisions.</p>
+                    <div class="process-card reveal">
+                        <span class="process-step">02</span>
+                        <h3>Design</h3>
+                        <p>Create wireframes and prototypes that feel connected to the problem you're solving.</p>
                     </div>
-                    <div class="highlight-card reveal">
-                        <h3>Collaboration</h3>
-                        <p>Working closely with product, engineering, and stakeholders to deliver impact quickly.</p>
+                    <div class="process-card reveal">
+                        <span class="process-step">03</span>
+                        <h3>Validate</h3>
+                        <p>Test with real people, capture insights, and iterate until the experience sings.</p>
+                    </div>
+                    <div class="process-card reveal">
+                        <span class="process-step">04</span>
+                        <h3>Ship</h3>
+                        <p>Work alongside engineering to deliver polished products with thoughtful details.</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section class="section reveal" aria-label="Featured projects">
+            <div class="section-inner">
+                <div class="section-header">
+                    <h2>Featured Projects</h2>
+                    <p>Some of the case studies I’m most proud of — built with empathy, collaboration, and iteration.</p>
+                </div>
+
+                <div class="project-carousel" data-carousel>
+                    <button class="carousel-button carousel-prev" type="button" aria-label="Previous project">←</button>
+                    <div class="carousel-track">
+                        <article class="project-slide">
+                            <h3>Onboarding Redesign</h3>
+                            <p>Revamped onboarding for a productivity platform, increasing completion by 18% and reducing drop-off.</p>
+                            <div class="slide-tags">
+                                <span class="tag">UX Research</span>
+                                <span class="tag">Prototyping</span>
+                            </div>
+                            <a class="button button-primary" href="case-study-onboarding.html">View case study</a>
+                        </article>
+                        <article class="project-slide">
+                            <h3>Design System Toolkit</h3>
+                            <p>Built a modular design system to help teams deliver consistent UI across products.</p>
+                            <div class="slide-tags">
+                                <span class="tag">Design System</span>
+                                <span class="tag">UI Kit</span>
+                            </div>
+                            <a class="button button-primary" href="case-study-design-system.html">View case study</a>
+                        </article>
+                        <article class="project-slide">
+                            <h3>Usability Testing Sprint</h3>
+                            <p>Ran rapid testing sessions that revealed usability blockers and improved task success by 22%.</p>
+                            <div class="slide-tags">
+                                <span class="tag">User Testing</span>
+                                <span class="tag">Iterative Design</span>
+                            </div>
+                            <a class="button button-primary" href="case-study-usability-lab.html">View case study</a>
+                        </article>
+                    </div>
+                    <button class="carousel-button carousel-next" type="button" aria-label="Next project">→</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal" aria-label="Testimonials">
+            <div class="section-inner">
+                <h2>What people say</h2>
+                <div class="testimonial-grid" data-testimonials>
+                    <div class="testimonial-card reveal" role="button" tabindex="0">
+                        <p class="testimonial-copy">“Darrell’s design leadership helped our team set a clear direction. His ability to translate research into usable products is exceptional.”</p>
+                        <p class="testimonial-author">— Jaime K., Product Manager</p>
+                    </div>
+                    <div class="testimonial-card reveal" role="button" tabindex="0">
+                        <p class="testimonial-copy">“The UI kit he built reduced design handoff time by 30% and made it easier to scale source components.”</p>
+                        <p class="testimonial-author">— Amira S., Front-end Engineer</p>
+                    </div>
+                    <div class="testimonial-card reveal" role="button" tabindex="0">
+                        <p class="testimonial-copy">“He has a real talent for making complex problems feel simple, balanced, and delightful.”</p>
+                        <p class="testimonial-author">— Morgan L., UX Researcher</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal" aria-label="Get in touch">
+            <div class="section-inner">
+                <div class="cta-large">
+                    <h2>Let’s design something people love.</h2>
+                    <p>Whether you’re building a new product or refining an existing experience, I’m happy to help you through the process.</p>
+                    <a class="button" href="contact.html">Get in touch</a>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <a class="contact-float" href="contact.html" aria-label="Contact Darrell">
+        <span>✉️</span>
+        <span>Contact</span>
+    </a>
 
     <div id="footer"></div>
     <script src="js/main.js"></script>
