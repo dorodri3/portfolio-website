@@ -31,6 +31,7 @@ body {
     background-color: var(--bg);
     color: var(--ink);
     line-height: 1.6;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 :focus-visible {
@@ -169,6 +170,7 @@ section {
     padding: 60px 0;
     background: var(--surface);
     border-top: 1px solid var(--border);
+    transition: background 0.25s ease;
 }
 
 .section-inner {

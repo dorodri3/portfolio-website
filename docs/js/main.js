@@ -91,12 +91,14 @@ function setupCarousels() {
         };
 
         prevButton.addEventListener('click', () => {
-            currentIndex = Math.max(0, currentIndex - 1);
+            // Wrap around to the last slide when reaching the beginning
+            currentIndex = currentIndex === 0 ? slides.length - 1 : currentIndex - 1;
             updateState();
         });
 
         nextButton.addEventListener('click', () => {
-            currentIndex = Math.min(slides.length - 1, currentIndex + 1);
+            // Wrap around to the first slide when reaching the end
+            currentIndex = currentIndex === slides.length - 1 ? 0 : currentIndex + 1;
             updateState();
         });
 

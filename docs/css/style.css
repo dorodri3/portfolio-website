@@ -31,6 +31,7 @@ body {
     background-color: var(--bg);
     color: var(--ink);
     line-height: 1.6;
+    transition: background-color 0.25s ease, color 0.25s ease;
 }
 
 :focus-visible {
@@ -167,8 +168,9 @@ section {
 /* Sections */
 .section {
     padding: 60px 0;
-    background: rgba(255, 253, 249, 0.75);
-    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    background: var(--surface);
+    border-top: 1px solid var(--border);
+    transition: background 0.25s ease;
 }
 
 .section-inner {
@@ -190,7 +192,7 @@ section {
     padding: 60px 0 60px;
     background: radial-gradient(circle at top right, rgba(209, 140, 87, 0.25), transparent 55%),
         radial-gradient(circle at bottom left, rgba(183, 127, 98, 0.18), transparent 55%),
-        rgba(255, 253, 249, 0.92);
+        var(--surface);
 }
 
 @media (max-width: 560px) {
