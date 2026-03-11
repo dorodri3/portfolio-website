@@ -1,9 +1,8 @@
 // main.js - Main JavaScript file for the portfolio website
 
-document.addEventListener('DOMContentLoaded', () => {
-    // Initialize header and footer components
-    loadHeader();
-    loadFooter();
+document.addEventListener('DOMContentLoaded', async () => {
+    // Initialize header and footer components (must happen before plugins that rely on their DOM)
+    await Promise.all([loadHeader(), loadFooter()]);
 
     // Page transitions and typed intro (if available)
     setupPageTransitions();
